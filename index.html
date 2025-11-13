@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T3</title>
+    <meta name="description" content="T3">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome (Local) -->
+    <link rel="stylesheet" href="css/fontawesome.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KPSQ7G5G');</script>
+    <!-- End Google Tag Manager -->
+    
+    <!-- Smooth scroll CSS -->
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      /* Smooth marquee animation - no jump reset */
+      @keyframes marquee {
+          0% {
+              transform: translateX(0%);
+          }
+          100% {
+              transform: translateX(-100%);
+          }
+      }
+      
+      .animate-marquee {
+          animation: marquee 20s linear infinite;
+          will-change: transform;
+      }
+      
+      /* Pause animation on hover */
+      .animate-marquee:hover {
+          animation-play-state: paused;
+      }
+      
+      /* Manual carousel styles */
+      .carousel-wrapper {
+          position: relative;
+      }
+      
+      .carousel-container {
+          overflow: hidden;
+          border-radius: 12px;
+          margin-bottom: 24px;
+      }
+      
+      .carousel-track {
+          display: flex;
+          transition: transform 0.4s ease-in-out;
+          width: 300%; /* 3 card × 100% */
+      }
+      
+      .carousel-slide {
+          width: 33.333333%; /* 100% / 3 card */
+          flex-shrink: 0;
+          padding: 0 4px; /* Piccolo padding interno */
+      }
+      
+      .carousel-controls {
+          display: flex;
+          justify-content: center;
+          gap: 16px;
+          margin-top: 16px;
+      }
+      
+      .carousel-btn {
+          background: rgba(0, 101, 191, 0.95);
+          color: white;
+          border: none;
+          border-radius: 50%;
+          width: 50px;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          font-size: 22px;
+          font-weight: bold;
+          box-shadow: 0 4px 16px rgba(0, 101, 191, 0.3);
+          transition: all 0.3s ease;
+      }
+      
+      .carousel-btn:hover {
+          background: rgba(0, 101, 191, 1);
+          transform: scale(1.1);
+          box-shadow: 0 6px 20px rgba(0, 101, 191, 0.4);
+      }
+      
+      /* Assicura che non ci siano salti */
+      .marquee-container {
+          overflow: hidden;
+          white-space: nowrap;
+      }
+      
+      .marquee-content {
+          display: inline-block;
+          min-width: 200%;
+      }
+    </style>
+</head>
+
+<body class="min-h-screen">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KPSQ7G5G"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <main>
+
+    <!-- Hero Section - DESKTOP -->
+    <div class="relative bg-white overflow-hidden lg:pl-32 lg:pr-0 lg:py-16 md:py-16 md:pr-0 md:pl-16 md:gap-16 hidden lg:block md:block" style="min-height: 600px;">
+      <!-- Content container -->
+      <div class="relative z-10 flex items-start justify-between">
+        <!-- Left content -->
+        <div class="flex-1 max-w-2xl md:w-1/2">
+          <div class="flex flex-col gap-20">
+            <!-- Logo -->
+            <div class="w-28 h-auto mb-4">
+              <img src="images/logo.png" alt="T3" class="w-full h-auto">
+            </div>
+
+            <!-- Main content -->
+            <div class="flex flex-col gap-8">
+              <div class="flex flex-col gap-8">
+                <h1 class="text-3xl md:text-4xl lg:text-6xl font-bold text-gray-900 leading-tight" style="font-family: 'Nunito', sans-serif;">
+                  Stand modulari per Fiere
+                </h1>
+                <p class="text-base md:text-lg lg:text-2xl text-gray-700 leading-relaxed" style="font-family: 'Open Sans', sans-serif;">
+                  <b>Zero sprechi</b>, <b>-50% costi</b><br/><br/>
+                  Con T3 Systems riduci i <b>costi di allestimento</b>, <b>azzeri gli sprechi</b> e <b>riutilizzi lo stand</b> a ogni evento.
+                </p>
+              </div>
+
+              <!-- CTA Buttons -->
+              <div class="flex lg:flex-row flex-col gap-4">
+                <a href="#form-section" class="px-8 py-3 text-white text-md font-semibold rounded-full transition-colors w-full lg:w-fit inline-block text-center" style="font-family: 'Open Sans', sans-serif; background-color: #0065BF;" onmouseover="this.style.backgroundColor='#004a8f'" onmouseout="this.style.backgroundColor='#0065BF'">
+                  Richiedi un preventivo gratuito
+                </a>
+                <a href="#come-funziona" class="px-8 py-3 text-md font-semibold rounded-full transition-colors w-full lg:w-fit inline-block text-center" style="font-family: 'Open Sans', sans-serif; border: 2px solid #0065BF; color: #0065BF; background-color: transparent;" onmouseover="this.style.backgroundColor='rgba(0, 101, 191, 0.1)'" onmouseout="this.style.backgroundColor='transparent'">
+                  Scopri il sistema
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right image - attached to right edge -->
+        <div class="flex-shrink-0 relative self-start md:w-1/2">
+          <img src="images/hero.png" alt="T3 Stand modulari" class="w-auto object-contain ml-auto" style="max-height: 60vh; height: auto;">
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Section - MOBILE -->
+    <div class="relative bg-white overflow-hidden md:hidden lg:hidden flex flex-col items-center">
+
+      <!-- Logo -->
+      <div class="w-50 h-auto mb-8 px-8 pt-8">
+        <img src="images/logo.png" alt="T3" class="w-full h-auto">
+      </div>
+
+      <!-- Main content -->
+      <div class="flex flex-col gap-8 items-center justify-center px-8 py-8">
+        <div class="flex flex-col gap-8">
+          <h1 class="text-3xl md:text-4xl lg:text-6xl font-bold text-gray-900 leading-tight" style="font-family: 'Nunito', sans-serif;">Stand modulari per Fiere</h1>
+          <p class="text-base md:text-lg lg:text-2xl text-gray-700 leading-relaxed" style="font-family: 'Open Sans', sans-serif;">
+            <b>Zero sprechi</b>, <b>-50% costi</b><br/><br/>
+            Con T3 Systems riduci i <b>costi di allestimento</b>, <b>azzeri gli sprechi</b> e <b>riutilizzi lo stand</b> a ogni evento.
+          </p>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col gap-4">
+          <a href="#form-section" class="px-8 py-3 text-white text-md font-semibold rounded-full transition-colors w-full inline-block text-center" style="font-family: 'Open Sans', sans-serif; background-color: #0065BF;" onmouseover="this.style.backgroundColor='#004a8f'" onmouseout="this.style.backgroundColor='#0065BF'">
+            Richiedi un preventivo gratuito
+          </a>
+          <a href="#come-funziona" class="px-8 py-3 text-md font-semibold rounded-full transition-colors w-full inline-block text-center" style="font-family: 'Open Sans', sans-serif; border: 2px solid #0065BF; color: #0065BF; background-color: transparent;" onmouseover="this.style.backgroundColor='rgba(0, 101, 191, 0.1)'" onmouseout="this.style.backgroundColor='transparent'">
+            Scopri il sistema
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Image -->
+      <div class="w-full h-auto">
+        <img src="images/heroMobile.png" alt="T3 Stand modulari" class="w-full h-auto object-contain">
+      </div>
+        
+    </div>
+
+    <!-- Features Banner -->
+    <div class="w-full py-4 shadow-lg overflow-hidden lg:px-16 lg:py-4" style="background-color: #0065BF;">
+      <!-- Desktop version -->
+      <div class="hidden md:flex flex-wrap justify-center items-center gap-6 lg:gap-8">
+        <div class="flex items-center gap-3 flex-shrink-0">
+          <img src="images/vector1.png" alt="Icon" class="w-8 h-8 flex-shrink-0">
+          <span class="text-white text-xl lg:text-2xl font-bold whitespace-nowrap" style="font-family: 'Nunito', sans-serif;">Stand modulari</span>
+        </div>
+
+        <div class="flex items-center gap-3 flex-shrink-0">
+          <img src="images/vector2.png" alt="Icon" class="w-8 h-8 flex-shrink-0">
+          <span class="text-white text-xl lg:text-2xl font-bold whitespace-nowrap" style="font-family: 'Nunito', sans-serif;">Stand fieristici</span>
+        </div>
+
+        <div class="flex items-center gap-3 flex-shrink-0">
+          <img src="images/vector1.png" alt="Icon" class="w-8 h-8 flex-shrink-0">
+          <span class="text-white text-xl lg:text-2xl font-bold whitespace-nowrap" style="font-family: 'Nunito', sans-serif;">Pareti luminose</span>
+        </div>
+
+        <div class="flex items-center gap-3 flex-shrink-0">
+          <img src="images/vector2.png" alt="Icon" class="w-8 h-8 flex-shrink-0">
+          <span class="text-white text-xl lg:text-2xl font-bold whitespace-nowrap" style="font-family: 'Nunito', sans-serif;">Sistemi espositivi</span>
+        </div>
+
+        <div class="flex items-center gap-3 flex-shrink-0">
+          <img src="images/vector1.png" alt="Icon" class="w-8 h-8 flex-shrink-0">
+          <span class="text-white text-xl lg:text-2xl font-bold whitespace-nowrap" style="font-family: 'Nunito', sans-serif;">Tools-free</span>
+        </div>
+      </div>
+    
+      <!-- Mobile marquee version - OTTIMIZZATO -->
+      <div class="md:hidden overflow-hidden whitespace-nowrap">
+        <div class="animate-marquee inline-block gap-12">
+          <!-- Primo set completo -->
+          <div class="inline-flex gap-12 pr-12">
+            <div class="flex items-center gap-3 flex-shrink-0">
+              <img src="images/vector1.png" alt="Icon" class="w-8 h-8">
+              <span class="text-white text-2xl font-bold" style="font-family: 'Nunito', sans-serif;">Stand modulari</span>
+            </div>
+            
+            <div class="flex items-center gap-3 flex-shrink-0">
+              <img src="images/vector2.png" alt="Icon" class="w-8 h-8">
+              <span class="text-white text-2xl font-bold" style="font-family: 'Nunito', sans-serif;">Stand fieristici</span>
+            </div>
+            
+            <div class="flex items-center gap-3 flex-shrink-0">
+              <img src="images/vector1.png" alt="Icon" class="w-8 h-8">
+              <span class="text-white text-2xl font-bold" style="font-family: 'Nunito', sans-serif;">Pareti luminose</span>
+            </div>
+            
+            <div class="flex items-center gap-3 flex-shrink-0">
+              <img src="images/vector2.png" alt="Icon" class="w-8 h-8">
+              <span class="text-white text-2xl font-bold" style="font-family: 'Nunito', sans-serif;">Sistemi espositivi</span>
+            </div>
+            
+            <div class="flex items-center gap-3 flex-shrink-0">
+              <img src="images/vector1.png" alt="Icon" class="w-8 h-8">
+              <span class="text-white text-2xl font-bold" style="font-family: 'Nunito', sans-serif;">Tools-free</span>
+            </div>
+          </div>
+          
+          <!-- Secondo set identico per continuità perfetta -->
+          <div class="inline-flex gap-12 pl-12">
+            <div class="flex items-center gap-3 flex-shrink-0">
+              <img src="images/vector1.png" alt="Icon" class="w-8 h-8">
+              <span class="text-white text-2xl font-bold" style="font-family: 'Nunito', sans-serif;">Stand modulari</span>
+            </div>
+            
+            <div class="flex items-center gap-3 flex-shrink-0">
+              <img src="images/vector2.png" alt="Icon" class="w-8 h-8">
+              <span class="text-white text-2xl font-bold" style="font-family: 'Nunito', sans-serif;">Stand fieristici</span>
+            </div>
+            
+            <div class="flex items-center gap-3 flex-shrink-0">
+              <img src="images/vector1.png" alt="Icon" class="w-8 h-8">
+              <span class="text-white text-2xl font-bold" style="font-family: 'Nunito', sans-serif;">Pareti luminose</span>
+            </div>
+            
+            <div class="flex items-center gap-3 flex-shrink-0">
+              <img src="images/vector2.png" alt="Icon" class="w-8 h-8">
+              <span class="text-white text-2xl font-bold" style="font-family: 'Nunito', sans-serif;">Sistemi espositivi</span>
+            </div>
+            
+            <div class="flex items-center gap-3 flex-shrink-0">
+              <img src="images/vector1.png" alt="Icon" class="w-8 h-8">
+              <span class="text-white text-2xl font-bold" style="font-family: 'Nunito', sans-serif;">Tools-free</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Il sistema T3 -->
+
+    <div class="flex flex-col lg:gap-16 md:gap-8 lg:px-32 lg:py-16 md:py-16 py-12">
+
+      <!-- Top content -->
+      <div class="flex gap-16 lg:flex-row flex-col-reverse">
+
+        <div class="lg:w-1/2 flex flex-col gap-6 md:gap-8 self-center md:p-16 px-6 py-8">
+          <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold" style="font-family: 'Nunito', sans-serif;">Il sistema T3</h2>
+          <p class="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed" style="font-family: 'Open Sans', sans-serif;">
+            I nostri <b>stand modulari</b> non sono semplici strutture assemblabili. Sono <b>sistemi intelligenti</b> progettati per <b>crescere</b> e <b>adattarsi</b> alle tue esigenze, evento dopo evento. <b>Un investimento</b>, <b>infinite configurazioni.</b>
+          </p>
+        </div>
+
+        <div class="lg:w-1/2">
+          <img src="images/sistema.png" alt="Il sistema T3" class="w-full h-auto object-contain hidden lg:block">
+          <img src="images/sistema2.png" alt="Il sistema T3" class="w-full h-auto object-contain block lg:hidden">
+        </div>
+      
+      </div>
+      
+      <!-- Desktop: layout normale -->
+      <div class="hidden lg:flex justify-between gap-16 lg:px-16 md:px-16 px-8">
+
+        <!-- Card 1 -->
+        <div class="flex flex-col gap-4 shadow-xl rounded-lg p-6 md:p-8 bg-white w-full">
+          <div class="flex flex-col gap-4 items-center">
+            <div class="inline-flex justify-center items-center" style="background-color: #D3EAFF; border-radius: 50%; width: 56px; height: 56px; min-width: 56px; min-height: 56px;">
+              <img src="images/sistema/1.png" alt="Icon" class="w-7 h-7">
+            </div>
+            <h3 class="text-lg md:text-xl lg:text-2xl font-bold text-center" style="font-family: 'Nunito', sans-serif;">Sistema Brevettato<br/>"Twist-Lock-Connect"</h3>
+          </div>
+          <p class="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed" style="font-family: 'Open Sans', sans-serif;">Mentre la concorrenza richiede <b>attrezzi e tecnici specializzati</b>, i nostri stand si montano <b>solo con le mani</b>. <b>Zero bulloni</b>, <b>zero viti</b>, <b>zero costi aggiuntivi</b>.</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="flex flex-col gap-4 shadow-xl rounded-lg p-6 md:p-8 bg-white w-full">
+          <div class="flex flex-col gap-4 items-center">
+            <div class="inline-flex justify-center items-center" style="background-color: #D3EAFF; border-radius: 50%; width: 56px; height: 56px; min-width: 56px; min-height: 56px;">
+              <img src="images/sistema/2.png" alt="Icon" class="w-7 h-7">
+            </div>
+            <h3 class="text-lg md:text-xl lg:text-2xl font-bold text-center" style="font-family: 'Nunito', sans-serif;">Modularità infinita</h3>
+          </div>
+          <p class="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed" style="font-family: 'Open Sans', sans-serif;">Dal <b>piccolo box espositivo</b> agli allestimenti di <b>centinaia di metri quadrati</b>, con altezze fino a <b>6 metri</b>. Se riesci a immaginarlo, <b>T3 può costruirlo.</b></p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="flex flex-col gap-4 shadow-xl rounded-lg p-6 md:p-8 bg-white w-full">
+          <div class="flex flex-col gap-4 items-center">
+            <div class="inline-flex justify-center items-center" style="background-color: #D3EAFF; border-radius: 50%; width: 56px; height: 56px; min-width: 56px; min-height: 56px;">
+              <img src="images/sistema/3.png" alt="Icon" class="w-7 h-7">
+            </div>
+            <h3 class="text-lg md:text-xl lg:text-2xl font-bold text-center" style="font-family: 'Nunito', sans-serif;">Garanzia a vita</h3>
+          </div>
+          <p class="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed" style="font-family: 'Open Sans', sans-serif;">I componenti T3 sono <b>garantiti a vita</b> per le rotture da normale utilizzo. <b>Nessun altro sul mercato</b> offre questa sicurezza.</p>
+        </div>
+
+      </div>
+
+      <!-- Mobile/Tablet: carosello manuale -->
+      <div class="lg:hidden px-8 md:px-16 md:my-8 my-8">
+        <div class="carousel-wrapper">
+          <!-- Contenitore del carosello -->
+          <div class="carousel-container">
+            <div id="carouselTrack" class="carousel-track">
+              <!-- Card 1 -->
+              <div class="carousel-slide">
+                <div class="flex flex-col gap-4 shadow-xl rounded-lg p-6 bg-white">
+                  <div class="flex flex-col gap-4 items-center">
+                    <div class="inline-flex justify-center items-center" style="background-color: #D3EAFF; border-radius: 50%; width: 56px; height: 56px; min-width: 56px; min-height: 56px;">
+                      <img src="images/sistema/1.png" alt="Icon" class="w-7 h-7">
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold text-center" style="font-family: 'Nunito', sans-serif;">Sistema Brevettato<br/>"Twist-Lock-Connect"</h3>
+                  </div>
+                  <p class="text-base md:text-lg text-gray-700 leading-relaxed" style="font-family: 'Open Sans', sans-serif;">Mentre la concorrenza richiede <b>attrezzi e tecnici specializzati</b>, i nostri stand si montano <b>solo con le mani</b>. <b>Zero bulloni</b>, <b>zero viti</b>, <b>zero costi aggiuntivi</b>.</p>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="carousel-slide">
+                <div class="flex flex-col gap-4 shadow-xl rounded-lg p-6 bg-white">
+                  <div class="flex flex-col gap-4 items-center">
+                    <div class="inline-flex justify-center items-center" style="background-color: #D3EAFF; border-radius: 50%; width: 56px; height: 56px; min-width: 56px; min-height: 56px;">
+                      <img src="images/sistema/2.png" alt="Icon" class="w-7 h-7">
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold text-center" style="font-family: 'Nunito', sans-serif;">Modularità infinita</h3>
+                  </div>
+                  <p class="text-base md:text-lg text-gray-700 leading-relaxed" style="font-family: 'Open Sans', sans-serif;">Dal <b>piccolo box espositivo</b> agli allestimenti di <b>centinaia di metri quadrati</b>, con altezze fino a <b>6 metri</b>. Se riesci a immaginarlo, <b>T3 può costruirlo.</b></p>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="carousel-slide">
+                <div class="flex flex-col gap-4 shadow-xl rounded-lg p-6 bg-white">
+                  <div class="flex flex-col gap-4 items-center">
+                    <div class="inline-flex justify-center items-center" style="background-color: #D3EAFF; border-radius: 50%; width: 56px; height: 56px; min-width: 56px; min-height: 56px;">
+                      <img src="images/sistema/3.png" alt="Icon" class="w-7 h-7">
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold text-center" style="font-family: 'Nunito', sans-serif;">Garanzia a vita</h3>
+                  </div>
+                  <p class="text-base md:text-lg text-gray-700 leading-relaxed" style="font-family: 'Open Sans', sans-serif;">I componenti T3 sono <b>garantiti a vita</b> per le rotture da normale utilizzo. <b>Nessun altro sul mercato</b> offre questa sicurezza.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Controlli sotto le card -->
+          <div class="carousel-controls">
+            <button class="carousel-btn" onclick="prevSlide()">‹</button>
+            <button class="carousel-btn" onclick="nextSlide()">›</button>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+    <!-- Perchè cambiare? -->
+    <div class="flex flex-col gap-12 lg:gap-16 lg:px-32 lg:py-16 md:p-16 py-12 px-6" style="margin-top: 0;">
+      <div class="flex flex-col gap-6 md:gap-8 items-center">
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-center" style="font-family: 'Nunito', sans-serif;">Perché cambiare?</h2>
+        <p class="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed text-center" style="font-family: 'Open Sans', sans-serif;">I problemi degli <b>stand tradizionali</b>, <b>fiera dopo fiera</b>.</p>
+      </div>
+
+      <!-- Cards -->
+      <div class="flex lg:flex-row gap-4 flex-col">
+
+        <!-- Card 1 -->
+        <div class="flex flex-col gap-4 shadow-xl rounded-lg p-6 md:p-8 bg-white w-full">
+          <div class="flex flex-row gap-4 items-center">
+            <div class="p-3 bg-rose-100 inline-flex justify-center items-center flex-shrink-0">
+              <div class="w-6 h-6 md:w-7 md:h-7 flex justify-center items-center">
+                <span class="text-red-800 text-xl md:text-2xl font-bold" style="font-family: 'Nunito', sans-serif;">X</span>
+              </div>
+            </div>
+            <h3 class="text-lg md:text-xl lg:text-2xl font-bold" style="font-family: 'Nunito', sans-serif;">Costi elevati</h3>
+          </div>
+          <p class="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed" style="font-family: 'Open Sans', sans-serif;">Ad ogni fiera è necessario ripetere <b>investimenti importanti</b>, con spese di <b>produzione e trasporto</b> che si sommano rapidamente.</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="flex flex-col gap-4 shadow-xl rounded-lg p-6 md:p-8 bg-white w-full">
+          <div class="flex flex-row gap-4 items-center">
+            <div class="p-3 bg-rose-100 inline-flex justify-center items-center flex-shrink-0">
+              <div class="w-6 h-6 md:w-7 md:h-7 flex justify-center items-center">
+                <span class="text-red-800 text-xl md:text-2xl font-bold" style="font-family: 'Nunito', sans-serif;">X</span>
+              </div>
+            </div>
+            <h3 class="text-lg md:text-xl lg:text-2xl font-bold" style="font-family: 'Nunito', sans-serif;">Montaggio complesso</h3>
+          </div>
+          <p class="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed" style="font-family: 'Open Sans', sans-serif;">Richiedono <b>personale specializzato</b>, <b>strumenti dedicati</b> e <b>molto tempo</b> per l'assemblaggio.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="flex flex-col gap-4 shadow-xl rounded-lg p-6 md:p-8 bg-white w-full">
+          <div class="flex flex-row gap-4 items-center">
+            <div class="p-3 bg-rose-100 inline-flex justify-center items-center flex-shrink-0">
+              <div class="w-6 h-6 md:w-7 md:h-7 flex justify-center items-center">
+                <span class="text-red-800 text-xl md:text-2xl font-bold" style="font-family: 'Nunito', sans-serif;">X</span>
+              </div>
+            </div>
+            <h3 class="text-lg md:text-xl lg:text-2xl font-bold" style="font-family: 'Nunito', sans-serif;">Spreco di materiali</h3>
+          </div>
+          <p class="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed" style="font-family: 'Open Sans', sans-serif;">Strutture <b>usa e getta</b> che dopo ogni evento finiscono per essere <b>smaltite</b>, con un forte <b>impatto economico e ambientale</b>.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Perche scegliere T3? -->
+    <div class="flex flex-col gap-12 lg:gap-16 lg:px-32 lg:py-16 flex-wrap md:p-16 py-12 px-6">
+
+      <!-- Top content -->
+      <div class="flex flex-col gap-6 md:gap-8 items-center">
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-center" style="font-family: 'Nunito', sans-serif;">Perché scegliere T3 Systems?</h2>
+        <p class="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed text-center" style="font-family: 'Open Sans', sans-serif;">La rivoluzione negli stand espositivi è qui.</p>
+      </div>
+      
+      <!-- Video section -->
+      <div class="flex justify-center">
+        <div class="relative w-full max-w-4xl aspect-video bg-gray-100 rounded-lg overflow-hidden shadow-lg">
+          <!-- Video element -->
+          <video id="hero-video" class="w-full h-full object-cover" controls muted loading="lazy" preload="none">
+            <source src="videowow.mp4" type="video/mp4">
+            Il tuo browser non supporta il tag video.
+          </video>
+        </div>
+      </div>
+
+      <!-- Cards section -->
+      <div class="flex lg:flex-row flex-col gap-4 w-full">
+        
+        <!-- Card 1 -->
+        <div class="flex flex-col gap-4 shadow-xl rounded-lg p-6 md:px-8 md:py-4 bg-white w-full">
+
+          <!-- Top content -->
+          <div class="flex flex-row gap-3 md:gap-4 items-center">
+            <div class="inline-flex justify-center items-center flex-shrink-0" style="background-color: #D3EAFF; border-radius: 50%; width: 28px; height: 28px; min-width: 28px; min-height: 28px;">
+              <span class="text-lg md:text-xl font-bold" style="font-family: 'Nunito', sans-serif; color: #0065BF; line-height: 1;">✓</span>
+            </div>
+            <h3 class="text-lg md:text-xl lg:text-2xl font-bold" style="font-family: 'Nunito', sans-serif;">Facilità di montaggio</h3>
+          </div>
+
+          <!-- Bottom content -->
+          <div class="flex flex-col gap-4">
+            <p class="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed" style="font-family: 'Open Sans', sans-serif;">
+              <b>Sistema Twist-Lock brevettato</b>: monta lo stand in modo <b>semplice e veloce</b>, <b>senza bisogno di attrezzi</b>.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="flex flex-col gap-4 shadow-xl rounded-lg p-6 md:px-8 md:py-4 bg-white w-full">
+
+          <!-- Top content -->
+          <div class="flex flex-row gap-3 md:gap-4 items-center">
+            <div class="inline-flex justify-center items-center flex-shrink-0" style="background-color: #D3EAFF; border-radius: 50%; width: 28px; height: 28px; min-width: 28px; min-height: 28px;">
+              <span class="text-lg md:text-xl font-bold" style="font-family: 'Nunito', sans-serif; color: #0065BF; line-height: 1;">✓</span>
+            </div>
+            <h3 class="text-lg md:text-xl lg:text-2xl font-bold" style="font-family: 'Nunito', sans-serif;">Modulabilità infinita</h3>
+          </div>
+
+          <!-- Bottom content -->
+          <div class="flex flex-col gap-4">
+            <p class="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed" style="font-family: 'Open Sans', sans-serif;">
+              <b>La stessa struttura</b>, <b>infinite configurazioni</b> personalizzate per ogni evento.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="flex flex-col gap-4 shadow-xl rounded-lg p-6 md:px-8 md:py-4 bg-white w-full">
+
+          <!-- Top content -->
+          <div class="flex flex-row gap-3 md:gap-4 items-center">
+            <div class="inline-flex justify-center items-center flex-shrink-0" style="background-color: #D3EAFF; border-radius: 50%; width: 28px; height: 28px; min-width: 28px; min-height: 28px;">
+              <span class="text-lg md:text-xl font-bold" style="font-family: 'Nunito', sans-serif; color: #0065BF; line-height: 1;">✓</span>
+            </div>
+            <h3 class="text-lg md:text-xl lg:text-2xl font-bold" style="font-family: 'Nunito', sans-serif;">Riutilizzo e ROI</h3>
+          </div>
+
+          <!-- Bottom content -->
+          <div class="flex flex-col gap-4">
+            <p class="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed" style="font-family: 'Open Sans', sans-serif;">
+              <b>Massimizza il valore</b> della struttura nel tempo: inizia a <b>recuperare l'investimento</b> già dal <b>secondo evento</b>.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="flex flex-col gap-4 shadow-xl rounded-lg p-6 md:px-8 md:py-4 bg-white w-full">
+
+          <!-- Top content -->
+          <div class="flex flex-row gap-3 md:gap-4 items-center">
+            <div class="inline-flex justify-center items-center flex-shrink-0" style="background-color: #D3EAFF; border-radius: 50%; width: 28px; height: 28px; min-width: 28px; min-height: 28px;">
+              <span class="text-lg md:text-xl font-bold" style="font-family: 'Nunito', sans-serif; color: #0065BF; line-height: 1;">✓</span>
+            </div>
+            <h3 class="text-lg md:text-xl lg:text-2xl font-bold" style="font-family: 'Nunito', sans-serif;">100% sostenibile</h3>
+          </div>
+
+          <!-- Bottom content -->
+          <div class="flex flex-col gap-4">
+            <p class="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed" style="font-family: 'Open Sans', sans-serif;">
+              Utilizza <b>materiali sostenibili e riutilizzabili</b> per rendere ogni tuo evento <b>più responsabile</b>.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA section -->
+      <div class="flex lg:flex-row flex-col gap-4 w-full justify-center">
+        <a href="#form-section" class="px-8 py-3 text-white text-md font-semibold rounded-full transition-colors inline-block" style="font-family: 'Open Sans', sans-serif; background-color: #0065BF;" onmouseover="this.style.backgroundColor='#004a8f'" onmouseout="this.style.backgroundColor='#0065BF'">
+          Richiedi un preventivo gratuito
+        </a>
+        <a href="#come-funziona" class="px-8 py-3 text-md font-semibold rounded-full transition-colors inline-block text-center" style="font-family: 'Open Sans', sans-serif; border: 2px solid #0065BF; color: #0065BF; background-color: transparent;" onmouseover="this.style.backgroundColor='rgba(0, 101, 191, 0.1)'" onmouseout="this.style.backgroundColor='transparent'">
+            Scopri il sistema
+          </a>
+      </div>
+
+    </div>
+
+    <!-- Come funziona T3? - DESKTOP V1-->
+    <div id="come-funziona" class="hidden lg:flex flex-row" style="background: linear-gradient(135deg, #0065BF 0%, #002F59 100%);">
+      <!-- Left content -->
+      <div class="w-1/2 flex flex-col justify-center px-8 md:px-16 py-16 md:py-20" style="min-height: 600px;">
+        <!-- Header -->
+        <div class="mb-12 md:mb-16">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4" style="font-family: 'Nunito', sans-serif;">Come funziona T3?</h2>
+          <p class="text-base md:text-lg lg:text-xl text-white opacity-90" style="font-family: 'Open Sans', sans-serif;">3 semplici passi</p>
+        </div>
+
+        <!-- Steps -->
+        <div class="flex flex-col gap-12">
+
+          <!-- Step 1 -->
+          <div class="flex flex-row items-start gap-4 md:gap-6 relative">
+            <div class="flex-shrink-0">
+              <img src="images/1.png" alt="Step 1" class="w-16 h-16 md:w-20 md:h-20">
+            </div>
+            <div class="flex flex-col gap-2 md:gap-3 flex-grow">
+              <h3 class="text-xl md:text-2xl font-bold text-white" style="font-family: 'Nunito', sans-serif;">Consulenza gratuita</h3>
+              <p class="text-base md:text-lg text-white leading-relaxed opacity-90" style="font-family: 'Open Sans', sans-serif;">Compila il modulo con <b>le tue specifiche</b>. Ti contatteremo per <b>discutere le tue esigenze</b> e trovare <b>la soluzione ideale</b>.</p>
+            </div>
+            <div class="flex-shrink-0 self-center hidden lg:block">
+              <img src="images/vector3.png" alt="Step 1" class="w-16 h-16 md:w-20 md:h-20">
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="flex flex-row-reverse items-start gap-4 md:gap-6 relative">
+            <div class="flex-shrink-0 order-3 hidden lg:block">
+              <img src="images/vector4.png" alt="Step 2" class="w-16 h-16 md:w-20 md:h-20">
+            </div>
+            <div class="flex flex-col gap-2 md:gap-3 flex-grow order-2 text-right">
+              <h3 class="text-xl md:text-2xl font-bold text-white" style="font-family: 'Nunito', sans-serif;">Render 3D</h3>
+              <p class="text-base md:text-lg text-white leading-relaxed opacity-90" style="font-family: 'Open Sans', sans-serif;">In <b>24 ore</b> ricevi <b>design CAD 3D, rendering e preventivo</b>. Apportiamo <b>eventuali modifiche</b> fino alla <b>tua approvazione finale</b>.</p>
+            </div>
+            <div class="flex-shrink-0 order-1">
+              <img src="images/2.png" alt="Step 2" class="w-16 h-16 md:w-20 md:h-20">
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="flex flex-row items-start gap-4 md:gap-6 relative">
+            <div class="flex-shrink-0">
+              <img src="images/3.png" alt="Step 3" class="w-16 h-16 md:w-20 md:h-20">
+            </div>
+            <div class="flex flex-col gap-2 md:gap-3 flex-grow">
+              <h3 class="text-xl md:text-2xl font-bold text-white" style="font-family: 'Nunito', sans-serif;">Consegna e formazione</h3>
+              <p class="text-base md:text-lg text-white leading-relaxed opacity-90" style="font-family: 'Open Sans', sans-serif;">Consegna in <b>2 settimane</b> in <b>scatole compatte</b>. Ti forniamo <b>istruzioni per il montaggio</b> semplice e veloce <b>senza attrezzi</b>.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Right content Img -->
+      <div class="w-1/2 flex items-center justify-center lg:my-0">
+        <img src="images/come-funziona.jpg" alt="T3 Systems Process" class="w-full h-full object-cover">
+      </div>
+    </div>
+
+    <!-- Come funziona T3? - MOBILE V1-->
+    <div class="relative lg:px-32 lg:py-16 md:p-16 py-12 px-6 lg:hidden" style="background-image: url('images/come-funziona.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+      <!-- Overlay nero trasparente -->
+      <div class="absolute inset-0 bg-black bg-opacity-80"></div>
+
+      <!-- Content -->
+      <div class="relative z-10 flex flex-col gap-12 md:gap-16 max-w-4xl">
+        <!-- Header -->
+        <div class="flex flex-col gap-6 md:gap-8">
+          <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-white" style="font-family: 'Nunito', sans-serif;">Come funziona T3?</h2>
+          <p class="text-base md:text-lg lg:text-xl text-white leading-relaxed" style="font-family: 'Open Sans', sans-serif;">3 semplici passi</p>
+        </div>
+
+        <!-- Steps -->
+        <div class="flex flex-col gap-8">
+
+          <!-- Step 1 -->
+          <div class="flex flex-row gap-6 md:gap-8 items-center">
+            <img src="images/1.png" alt="T3 Systems" class="w-12 h-12 md:w-16 md:h-16 flex-shrink-0">
+            <div class="flex flex-col gap-3 md:gap-4">
+              <h3 class="text-lg md:text-xl lg:text-2xl font-bold text-white" style="font-family: 'Nunito', sans-serif;">Consulenza gratuita</h3>
+              <p class="text-sm md:text-base lg:text-lg text-white leading-relaxed opacity-90" style="font-family: 'Open Sans', sans-serif;">Compila il modulo con <b>le tue specifiche</b>. Ti contatteremo per <b>discutere le tue esigenze</b> e trovare <b>la soluzione ideale</b>.</p>
+            </div>
+            <img src="images/vector3.png" alt="T3 Systems" class="w-16 h-16 hidden lg:block md:block flex-shrink-0">
+          </div>
+
+          <!-- Step 2 -->
+          <div class="flex flex-row-reverse gap-6 md:gap-8 items-center">
+            <img src="images/2.png" alt="T3 Systems" class="w-12 h-12 md:w-16 md:h-16 flex-shrink-0">
+            <div class="flex flex-col gap-3 md:gap-4">
+              <h3 class="text-lg md:text-xl lg:text-2xl font-bold text-white text-right" style="font-family: 'Nunito', sans-serif;">Render 3D</h3>
+              <p class="text-sm md:text-base lg:text-lg text-white leading-relaxed opacity-90" style="font-family: 'Open Sans', sans-serif;">In <b>24 ore</b> ricevi <b>design CAD 3D, rendering e preventivo</b>. Apportiamo <b>eventuali modifiche</b> fino alla <b>tua approvazione finale</b>.</p>
+            </div>
+            <img src="images/vector4.png" alt="T3 Systems" class="w-16 h-16 hidden lg:block md:block flex-shrink-0">
+          </div>
+
+          <!-- Step 3 -->
+          <div class="flex flex-row gap-6 md:gap-8 items-center">
+            <img src="images/3.png" alt="T3 Systems" class="w-12 h-12 md:w-16 md:h-16 flex-shrink-0">
+            <div class="flex flex-col gap-3 md:gap-4">
+              <h3 class="text-lg md:text-xl lg:text-2xl font-bold text-white" style="font-family: 'Nunito', sans-serif;">Consegna e formazione</h3>
+              <p class="text-sm md:text-base lg:text-lg text-white leading-relaxed opacity-90" style="font-family: 'Open Sans', sans-serif;">Consegna in <b>2 settimane</b> in <b>scatole compatte</b>. Ti forniamo <b>istruzioni per il montaggio</b> semplice e veloce <b>senza attrezzi</b>.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Tecnologia avanzata -->
+    <div class="flex lg:flex-row gap-16 lg:pr-32 flex-col-reverse items-center justify-center lg:py-16 md:py-16 py-12" style="min-height: 600px;">
+
+      <!-- Left content -->
+      <div class="flex flex-col gap-8 lg:w-full">
+        <img src="images/tecnologia-avanzata.png" alt="T3 Systems" class="w-full h-auto object-cover" style="max-height: 90vh;">
+      </div>
+
+      <!-- Right content -->
+      <div class="flex flex-col gap-12 lg:gap-16 lg:w-3/5 lg:py-16 w-full md:px-16 md:pt-16 md:items-center sm:items-center pt-12 px-6">
+
+        <!-- Top content -->
+        <div class="flex flex-col gap-6 md:gap-8 items-center lg:items-start">
+          <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-center lg:text-left" style="font-family: 'Nunito', sans-serif;">Tecnologia avanzata</h2>
+          <p class="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed text-center lg:text-left" style="font-family: 'Open Sans', sans-serif;">Innovazione e sostenibilità senza compromessi</p>
+        </div>
+
+        <!-- Cards content -->
+        <div class="flex flex-col gap-8">
+
+          <!-- Card 1 -->
+          <div class="flex flex-row gap-6 md:gap-8 items-center">
+            <div class="inline-flex justify-center items-center flex-shrink-0 md:w-12 md:h-12 md:min-w-12 md:min-h-12" style="background-color: #0065BF; border-radius: 50%; width: 36px; height: 36px; min-width: 36px; min-height: 36px;">
+              <img src="images/vector2.png" alt="T3 Systems" class="w-5 h-5 md:w-6 md:h-6">
+            </div>
+            <div class="flex flex-col gap-2 md:gap-4">
+              <h3 class="text-lg md:text-xl lg:text-2xl font-bold" style="font-family: 'Nunito', sans-serif;">Sistema twist-lock</h3>
+              <p class="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed" style="font-family: 'Open Sans', sans-serif;">
+                Fissaggi sicuri senza l'uso di viti o strumenti.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="flex flex-row gap-6 md:gap-8 items-center">
+            <div class="inline-flex justify-center items-center flex-shrink-0 md:w-12 md:h-12 md:min-w-12 md:min-h-12" style="background-color: #0065BF; border-radius: 50%; width: 36px; height: 36px; min-width: 36px; min-height: 36px;">
+              <img src="images/vector2.png" alt="T3 Systems" class="w-5 h-5 md:w-6 md:h-6">
+            </div>
+            <div class="flex flex-col gap-2 md:gap-4">
+              <h3 class="text-lg md:text-xl lg:text-2xl font-bold" style="font-family: 'Nunito', sans-serif;">Trasportabilità ottimale</h3>
+              <p class="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed" style="font-family: 'Open Sans', sans-serif;">
+                Design compatto e leggero
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="flex flex-row gap-6 md:gap-8 items-center">
+            <div class="inline-flex justify-center items-center flex-shrink-0 md:w-12 md:h-12 md:min-w-12 md:min-h-12" style="background-color: #0065BF; border-radius: 50%; width: 36px; height: 36px; min-width: 36px; min-height: 36px;">
+              <img src="images/vector2.png" alt="T3 Systems" class="w-5 h-5 md:w-6 md:h-6">
+            </div>
+            <div class="flex flex-col gap-2 md:gap-4">
+              <h3 class="text-lg md:text-xl lg:text-2xl font-bold" style="font-family: 'Nunito', sans-serif;">Materiali 100% riciclabili</h3>
+              <p class="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed" style="font-family: 'Open Sans', sans-serif;">
+                Alluminio 100% riciclabile e grafiche eco-sostenibili
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="flex flex-row gap-6 md:gap-8 items-center">
+            <div class="inline-flex justify-center items-center flex-shrink-0 md:w-12 md:h-12 md:min-w-12 md:min-h-12" style="background-color: #0065BF; border-radius: 50%; width: 36px; height: 36px; min-width: 36px; min-height: 36px;">
+              <img src="images/vector2.png" alt="T3 Systems" class="w-5 h-5 md:w-6 md:h-6">
+            </div>
+            <div class="flex flex-col gap-2 md:gap-4">
+              <h3 class="text-lg md:text-xl lg:text-2xl font-bold" style="font-family: 'Nunito', sans-serif;">Grafiche sostituibili</h3>
+              <p class="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed" style="font-family: 'Open Sans', sans-serif;">
+                Cambia la grafica, non lo stand.
+              </p>
+            </div>
+          </div>
+          
+        </div>
+
+        <!-- Button -->
+        <a href="#form-section" class="px-8 py-3 text-white text-md font-semibold rounded-full transition-colors w-fit inline-block lg:self-start" style="font-family: 'Open Sans', sans-serif; background-color: #0065BF;" onmouseover="this.style.backgroundColor='#004a8f'" onmouseout="this.style.backgroundColor='#0065BF'">
+          Richiedi un preventivo gratuito
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Cosa abbiamo realizzato -->
+    <div class="flex flex-col gap-12 lg:gap-16 lg:px-32 lg:py-16 md:p-16 py-12 px-6">
+
+      <!-- Top content -->
+      <div class="flex flex-col gap-6 md:gap-8 items-center">
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-center" style="font-family: 'Nunito', sans-serif;">Cosa abbiamo realizzato</h2>
+        <p class="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed text-center" style="font-family: 'Open Sans', sans-serif;">Alcuni progetti sviluppati per i nostri clienti.</p>
+      </div>
+
+      <!-- Cards content -->
+      <div class="flex lg:flex-row flex-col gap-8">
+
+        <!-- Card 1 -->
+        <div class="flex flex-col gap-4 shadow-xl rounded-lg bg-white lg:w-1/5 w-full">
+          <img src="images/cardsProgetti/1.png" alt="T3 Systems" class="w-full h-auto md:h-40 object-cover">
+          <div class="flex flex-row gap-4 pb-4 pl-2">
+            <img src="images/loghiProgetti/1.png" alt="T3 Systems" class="w-8 h-8 self-center flex-shrink-0 object-contain min-w-[2rem] min-h-[2rem]">
+            <h3 class="text-2xl font-bold" style="font-family: 'Nunito', sans-serif;">Chiesi</h3>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="flex flex-col gap-4 shadow-xl rounded-lg bg-white lg:w-1/5 w-full">
+          <img src="images/cardsProgetti/2.png" alt="T3 Systems" class="w-full h-auto md:h-40 object-cover">
+          <div class="flex flex-row gap-4 pb-4 pl-2">
+            <img src="images/loghiProgetti/2.png" alt="T3 Systems" class="w-8 h-8 self-center flex-shrink-0 object-contain min-w-[2rem] min-h-[2rem]">
+            <h3 class="text-2xl font-bold" style="font-family: 'Nunito', sans-serif;">Neurobox</h3>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="flex flex-col gap-4 shadow-xl rounded-lg bg-white lg:w-1/5 w-full">
+          <img src="images/cardsProgetti/3.png" alt="T3 Systems" class="w-full h-auto md:h-40 object-cover">
+          <div class="flex flex-row gap-4 pb-4 pl-2">
+            <img src="images/loghiProgetti/3.png" alt="T3 Systems" class="w-8 h-8 self-center flex-shrink-0 object-contain min-w-[2rem] min-h-[2rem]">
+            <h3 class="text-2xl font-bold" style="font-family: 'Nunito', sans-serif;">Lanchester Wine</h3>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="flex flex-col gap-4 shadow-xl rounded-lg bg-white lg:w-1/5 w-full">
+          <img src="images/cardsProgetti/4.png" alt="T3 Systems" class="w-full h-auto md:h-40 object-cover">
+          <div class="flex flex-row gap-4 pb-4 pl-2">
+            <img src="images/loghiProgetti/4.png" alt="T3 Systems" class="w-8 h-8 self-center flex-shrink-0 object-contain min-w-[2rem] min-h-[2rem]">
+            <h3 class="text-2xl font-bold" style="font-family: 'Nunito', sans-serif;">Franuí</h3>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="flex flex-col gap-4 shadow-xl rounded-lg bg-white lg:w-1/5 w-full">
+          <img src="images/cardsProgetti/5.png" alt="T3 Systems" class="w-full h-auto md:h-40 object-cover">
+          <div class="flex flex-row gap-4 pb-4 pl-2">
+            <img src="images/loghiProgetti/5.png" alt="T3 Systems" class="w-8 h-8 self-center flex-shrink-0 object-contain min-w-[2rem] min-h-[2rem]">
+            <h3 class="text-2xl font-bold" style="font-family: 'Nunito', sans-serif;">Spotless Water</h3>
+          </div>
+        </div>
+
+      </div>
+
+      <a href="#form-section" class="px-8 py-3 text-md font-semibold rounded-full transition-colors w-fit mx-auto inline-block text-center" style="font-family: 'Open Sans', sans-serif; border: 2px solid #0065BF; color: #0065BF; background-color: transparent;" onmouseover="this.style.backgroundColor='rgba(0, 101, 191, 0.1)'" onmouseout="this.style.backgroundColor='transparent'">
+        Desideri anche tu questi risultati?
+      </a>
+
+    </div>
+
+    <!-- Recensioni -->
+    <div class="flex flex-col gap-12 lg:gap-16 lg:px-32 lg:py-16 md:p-16 py-12 px-6" style="background: #1A202C">
+
+      <div class="flex flex-col gap-6 md:gap-8 items-center">
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-white" style="font-family: 'Nunito', sans-serif;">Cosa dicono i nostri clienti</h2>
+        <p class="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed text-center text-white" style="font-family: 'Open Sans', sans-serif;">
+          Le storie di successo di chi ha già scelto T3
+        </p>
+      </div>
+      
+      <!-- Recensioni cards -->
+      <div class="flex lg:flex-row gap-12 justify-center flex-col">
+
+        <!-- Card 1 -->
+        <div class="relative flex flex-col gap-6 shadow-xl rounded-2xl px-8 py-8 bg-white lg:w-1/2 w-full" style="background: #0065BF">
+          <!-- Client photo bubble -->
+          <div class="absolute -top-8 left-8">
+            <div class="w-16 h-16 rounded-full overflow-hidden border-4 border-white shadow-lg">
+              <img src="images/recensione-1.jpg" alt="Francesco" class="w-full h-full object-cover">
+            </div>
+          </div>
+          
+          <!-- Testimonial content -->
+          <div class="pt-6">
+            <p class="text-lg text-white leading-relaxed mb-4" style="font-family: 'Open Sans', sans-serif;">
+              "Facciamo 5 fiere all'anno. Con T3 abbiamo ridotto i costi del 40% e possiamo gestirci tutto da soli"
+            </p>
+            <div class="flex flex-col gap-1">
+              <p class="text-sm font-semibold text-white" style="font-family: 'Nunito', sans-serif;">
+                Francesco
+              </p>
+              <p class="text-xs text-white opacity-90" style="font-family: 'Open Sans', sans-serif;">
+                Marketing Manager API S.p.a
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="relative flex flex-col gap-6 shadow-xl rounded-2xl px-8 py-8 bg-white lg:w-1/2 w-full" style="background: #0065BF">
+          <!-- Client photo bubble -->
+          <div class="absolute -top-8 left-8">
+            <div class="w-16 h-16 rounded-full overflow-hidden border-4 border-white shadow-lg">
+              <img src="images/recensione-2.jpg" alt="Vito" class="w-full h-full object-cover">
+            </div>
+          </div>
+          
+          <!-- Testimonial content -->
+          <div class="pt-6">
+            <p class="text-lg text-white leading-relaxed mb-4" style="font-family: 'Open Sans', sans-serif;">
+              "Grazie al sistema T3 abbiamo dimezzato i tempi di montaggio e ridotto al minimo gli imprevisti in fiera"
+            </p>
+            <div class="flex flex-col gap-1">
+              <p class="text-sm font-semibold text-white" style="font-family: 'Nunito', sans-serif;">
+                Vito
+              </p>
+              <p class="text-xs text-white opacity-90" style="font-family: 'Open Sans', sans-serif;">
+                Titolare LORETO PRINT S.r.l.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Contatti -->
+    <div class="flex flex-col lg:flex-row gap-8 lg:gap-16 px-8 md:px-16 lg:px-32 py-16">
+
+      <!-- Left content -->
+      <div class="flex flex-col gap-8 lg:gap-16 w-full lg:w-[35%] self-center items-center lg:items-start">
+
+        <div class="flex flex-col gap-6 lg:gap-8 text-center lg:text-left">
+          <h2 class="text-3xl md:text-4xl font-bold" style="font-family: 'Nunito', sans-serif;">Contattaci per ulteriori informazioni!</h2>
+          <p class="text-lg md:text-xl text-gray-700 leading-relaxed" style="font-family: 'Open Sans', sans-serif;">
+            Richiedi ora il tuo preventivo gratuito per i nostri stand modulari!
+          </p>
+        </div>
+        
+        <div class="flex flex-col gap-4 w-full lg:w-fit items-center lg:items-start">
+          <a href="#form-section" class="px-6 md:px-8 py-3 text-white text-base md:text-lg font-semibold rounded-full transition-colors w-full md:w-fit inline-block text-center" style="font-family: 'Open Sans', sans-serif; background-color: #0065BF;" onmouseover="this.style.backgroundColor='#004a8f'" onmouseout="this.style.backgroundColor='#0065BF'">
+            Richiedi un preventivo gratuito
+          </a>
+          <a href="#come-funziona" class="px-6 md:px-8 py-3 text-base md:text-lg font-semibold rounded-full transition-colors w-full md:w-fit inline-block text-center" style="font-family: 'Open Sans', sans-serif; border: 2px solid #0065BF; color: #0065BF; background-color: transparent;" onmouseover="this.style.backgroundColor='rgba(0, 101, 191, 0.1)'" onmouseout="this.style.backgroundColor='transparent'">
+            Scopri come funziona
+          </a>
+        </div>
+        
+      </div>
+
+      <!-- Right content -->
+      <div class="flex flex-col lg:flex-row gap-6 w-full lg:w-[65%] justify-center">
+        
+        <!-- T3 Systems Benefits Column -->
+        <div class="flex flex-col gap-4 md:gap-6 p-6 md:p-8 rounded-2xl" style="background-color: #0065BF;">
+          <div class="flex items-center gap-4 mb-2 md:mb-4 justify-center lg:justify-start pt-8">
+            <img src="images/logoBianco.png" alt="T3" class="h-10 md:h-12 w-auto">
+            <span class="text-white text-base md:text-lg font-semibold" style="font-family: 'Nunito', sans-serif;">Display Systems</span>
+          </div>
+          
+          <!-- Benefits List -->
+          <div class="flex flex-col gap-4 md:gap-5 pb-8">
+            <!-- Risparmia fino al 50% -->
+            <div class="flex items-center gap-3 md:gap-4">
+              <div class="inline-flex justify-center items-center flex-shrink-0" style="background-color: #D3EAFF; border-radius: 50%; width: 32px; height: 32px; min-width: 32px; min-height: 32px;">
+                <span class="text-lg md:text-xl font-bold" style="font-family: 'Nunito', sans-serif; color: #0065BF; line-height: 1;">✓</span>
+              </div>
+              <span class="text-base md:text-lg font-semibold text-white" style="font-family: 'Nunito', sans-serif;">Risparmia fino al 50%</span>
+            </div>
+            
+            <!-- Montaggio veloce -->
+            <div class="flex items-center gap-3 md:gap-4">
+              <div class="inline-flex justify-center items-center flex-shrink-0" style="background-color: #D3EAFF; border-radius: 50%; width: 32px; height: 32px; min-width: 32px; min-height: 32px;">
+                <span class="text-lg md:text-xl font-bold" style="font-family: 'Nunito', sans-serif; color: #0065BF; line-height: 1;">✓</span>
+              </div>
+              <span class="text-base md:text-lg font-semibold text-white" style="font-family: 'Nunito', sans-serif;">Montaggio veloce</span>
+            </div>
+            
+            <!-- Riutilizzabile all'infinito -->
+            <div class="flex items-center gap-3 md:gap-4">
+              <div class="inline-flex justify-center items-center flex-shrink-0" style="background-color: #D3EAFF; border-radius: 50%; width: 32px; height: 32px; min-width: 32px; min-height: 32px;">
+                <span class="text-lg md:text-xl font-bold" style="font-family: 'Nunito', sans-serif; color: #0065BF; line-height: 1;">✓</span>
+              </div>
+              <span class="text-base md:text-lg font-semibold text-white" style="font-family: 'Nunito', sans-serif;">Riutilizzabile all'infinito</span>
+            </div>
+            
+            <!-- Zero sprechi -->
+            <div class="flex items-center gap-3 md:gap-4">
+              <div class="inline-flex justify-center items-center flex-shrink-0" style="background-color: #D3EAFF; border-radius: 50%; width: 32px; height: 32px; min-width: 32px; min-height: 32px;">
+                <span class="text-lg md:text-xl font-bold" style="font-family: 'Nunito', sans-serif; color: #0065BF; line-height: 1;">✓</span>
+              </div>
+              <span class="text-base md:text-lg font-semibold text-white" style="font-family: 'Nunito', sans-serif;">Zero sprechi</span>
+            </div>
+            
+            <!-- Configurazioni illimitate -->
+            <div class="flex items-center gap-3 md:gap-4">
+              <div class="inline-flex justify-center items-center flex-shrink-0" style="background-color: #D3EAFF; border-radius: 50%; width: 32px; height: 32px; min-width: 32px; min-height: 32px;">
+                <span class="text-lg md:text-xl font-bold" style="font-family: 'Nunito', sans-serif; color: #0065BF; line-height: 1;">✓</span>
+              </div>
+              <span class="text-base md:text-lg font-semibold text-white" style="font-family: 'Nunito', sans-serif;">Configurazioni illimitate</span>
+            </div>
+            
+            <!-- Nessuna competenza necessaria -->
+            <div class="flex items-center gap-3 md:gap-4">
+              <div class="inline-flex justify-center items-center flex-shrink-0" style="background-color: #D3EAFF; border-radius: 50%; width: 32px; height: 32px; min-width: 32px; min-height: 32px;">
+                <span class="text-lg md:text-xl font-bold" style="font-family: 'Nunito', sans-serif; color: #0065BF; line-height: 1;">✓</span>
+              </div>
+              <span class="text-base md:text-lg font-semibold text-white" style="font-family: 'Nunito', sans-serif;">Nessuna competenza necessaria</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Traditional Stands Problems Column -->
+        <div class="flex flex-col justify-center items-center">
+          <div class="w-fit rounded-xl border-2 px-4 py-3" style="border-color: #DC2626; background-color: #FAFAFA;">
+            <!-- Header -->
+            <div class="mb-3">
+              <h3 class="text-base md:text-lg font-bold text-gray-800" style="font-family: 'Nunito', sans-serif;">Stand convenzionali</h3>
+            </div>
+            
+            <!-- Problems List -->
+            <div class="flex flex-col gap-2">
+              <!-- Costi elevati -->
+              <div class="flex items-center gap-2">
+                <div class="inline-flex justify-center items-center flex-shrink-0 bg-rose-100 rounded-full" style="width: 20px; height: 20px; min-width: 20px; min-height: 20px;">
+                  <span class="text-red-600 text-sm font-bold" style="font-family: 'Nunito', sans-serif; line-height: 1;">✗</span>
+                </div>
+                <span class="text-sm font-semibold text-gray-800" style="font-family: 'Nunito', sans-serif;">Costi elevati</span>
+              </div>
+              
+              <!-- Ore di montaggio -->
+              <div class="flex items-center gap-2">
+                <div class="inline-flex justify-center items-center flex-shrink-0 bg-rose-100 rounded-full" style="width: 20px; height: 20px; min-width: 20px; min-height: 20px;">
+                  <span class="text-red-600 text-sm font-bold" style="font-family: 'Nunito', sans-serif; line-height: 1;">✗</span>
+                </div>
+                <span class="text-sm font-semibold text-gray-800" style="font-family: 'Nunito', sans-serif;">Ore di montaggio</span>
+              </div>
+              
+              <!-- Prodotti usa e getta -->
+              <div class="flex items-center gap-2">
+                <div class="inline-flex justify-center items-center flex-shrink-0 bg-rose-100 rounded-full" style="width: 20px; height: 20px; min-width: 20px; min-height: 20px;">
+                  <span class="text-red-600 text-sm font-bold" style="font-family: 'Nunito', sans-serif; line-height: 1;">✗</span>
+                </div>
+                <span class="text-sm font-semibold text-gray-800" style="font-family: 'Nunito', sans-serif;">Prodotti usa e getta</span>
+              </div>
+              
+              <!-- Elevato spreco di materiali -->
+              <div class="flex items-center gap-2">
+                <div class="inline-flex justify-center items-center flex-shrink-0 bg-rose-100 rounded-full" style="width: 20px; height: 20px; min-width: 20px; min-height: 20px;">
+                  <span class="text-red-600 text-sm font-bold" style="font-family: 'Nunito', sans-serif; line-height: 1;">✗</span>
+                </div>
+                <span class="text-sm font-semibold text-gray-800" style="font-family: 'Nunito', sans-serif;">Elevato spreco di materiali</span>
+              </div>
+              
+              <!-- Design fisso -->
+              <div class="flex items-center gap-2">
+                <div class="inline-flex justify-center items-center flex-shrink-0 bg-rose-100 rounded-full" style="width: 20px; height: 20px; min-width: 20px; min-height: 20px;">
+                  <span class="text-red-600 text-sm font-bold" style="font-family: 'Nunito', sans-serif; line-height: 1;">✗</span>
+                </div>
+                <span class="text-sm font-semibold text-gray-800" style="font-family: 'Nunito', sans-serif;">Design fisso</span>
+              </div>
+              
+              <!-- Richiede personale specializzato -->
+              <div class="flex items-center gap-2">
+                <div class="inline-flex justify-center items-center flex-shrink-0 bg-rose-100 rounded-full" style="width: 20px; height: 20px; min-width: 20px; min-height: 20px;">
+                  <span class="text-red-600 text-sm font-bold" style="font-family: 'Nunito', sans-serif; line-height: 1;">✗</span>
+                </div>
+                <span class="text-sm font-semibold text-gray-800" style="font-family: 'Nunito', sans-serif;">Richiede personale specializzato</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    
+    </div>
+    
+    <!-- Form -->
+    <div id="form-section" class="flex lg:flex-row gap-24 lg:px-32 lg:py-16 flex-col items-center justify-center" style="background-color: #1A202C; min-height: 700px;">
+
+      <!-- Left content -->
+      <div class="flex flex-col gap-16 lg:w-1/2 self-center w-full lg:object-contain">
+        <img src="images/imgForm.png" alt="T3" class="w-full h-auto object-contain" style="max-height: 80vh;">
+      </div>
+
+      <!-- Right content -->
+      <div class="flex flex-col gap-12 lg:gap-16 lg:w-1/2 self-center w-full md:px-16 md:pb-16 pb-12 px-6">
+
+        <div class="flex flex-col gap-6 md:gap-8">
+          <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-white" style="font-family: 'Nunito', sans-serif;">Compila il form</h2>
+          <p class="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed text-white" style="font-family: 'Open Sans', sans-serif;">
+            Richiedi subito il preventivo del tuo stand modulare!
+          </p>
+        </div>
+        
+        <form class="flex flex-col gap-6 w-full form-class" action="https://formspree.io/f/xqagrebl" method="POST">
+          
+          <!-- Nome e cognome -->
+          <label class="flex flex-col gap-2 text-white text-base font-normal" style="font-family: 'Open Sans', sans-serif;">
+            Nome e cognome
+            <input 
+              type="text" 
+              name="name"
+              placeholder="Mario Rossi" 
+              class="w-full px-6 py-4 rounded-full bg-transparent text-white placeholder-gray-300 border border-white/50 focus:border-white focus:outline-none"
+              style="font-family: 'Open Sans', sans-serif;"
+              required
+            />
+          </label>
+
+          <!-- Indirizzo email -->
+          <label class="flex flex-col gap-2 text-white text-base font-normal" style="font-family: 'Open Sans', sans-serif;">
+            Indirizzo email
+            <input 
+              type="email" 
+              name="email"
+              placeholder="mariorossi@gmail.com" 
+              class="w-full px-6 py-4 rounded-full bg-transparent text-white placeholder-gray-300 border border-white/50 focus:border-white focus:outline-none"
+              style="font-family: 'Open Sans', sans-serif;"
+              required
+            />
+          </label>
+
+          <!-- Numero di telefono -->
+          <label class="flex flex-col gap-2 text-white text-base font-normal" style="font-family: 'Open Sans', sans-serif;">
+            Numero di telefono
+            <input 
+              type="tel" 
+              name="phone"
+              placeholder="+39" 
+              class="w-full px-6 py-4 rounded-full bg-transparent text-white placeholder-gray-300 border border-white/50 focus:border-white focus:outline-none"
+              style="font-family: 'Open Sans', sans-serif;"
+            />
+          </label>
+
+          <!-- Ho bisogno di... -->
+          <label class="flex flex-col gap-2 text-white text-base font-normal" style="font-family: 'Open Sans', sans-serif;">
+            Ho bisogno di...
+            <textarea 
+              name="message"
+              placeholder="Specifica qui cos'hai in mente!" 
+              rows="4"
+              class="w-full px-6 py-4 rounded-2xl bg-transparent text-white placeholder-gray-300 border border-white/50 focus:border-white focus:outline-none resize-none"
+              style="font-family: 'Open Sans', sans-serif;"
+              required
+            ></textarea>
+          </label>
+
+          <!-- Checkbox -->
+          <div class="mt-4">
+            <!-- Desktop layout -->
+            <label class="hidden md:flex items-start gap-3 text-white text-base font-normal leading-relaxed" style="font-family: 'Open Sans', sans-serif;">
+              <input 
+                type="checkbox" 
+                name="privacy"
+                id="privacy-desktop"
+                required
+                class="w-5 h-5 mt-1 rounded border border-gray-400 bg-transparent checked:bg-white checked:border-white focus:outline-none"
+              />
+              <span>Accetto i <a href="https://t3systems.it/termini-e-condizioni/" class="text-blue-600 hover:text-blue-800 underline font-medium">Termini e condizioni</a> e l'<a href="https://t3systems.it/privacy-policy/" class="text-blue-600 hover:text-blue-800 underline font-medium">Informativa sulla privacy</a></span>
+            </label>
+
+            <!-- Mobile layout -->
+            <div class="md:hidden flex flex-col gap-2">
+              <div class="flex items-start gap-3 text-white text-base font-normal leading-relaxed" style="font-family: 'Open Sans', sans-serif;">
+                <input 
+                  type="checkbox" 
+                  name="privacy"
+                  id="privacy-mobile"
+                  required
+                  class="w-5 h-5 mt-3 rounded border border-gray-400 bg-transparent checked:bg-white checked:border-white focus:outline-none flex-shrink-0"
+                />
+                
+                <div class="flex flex-col gap-1">
+                  <div>
+                    Accetto i <a href="https://t3systems.it/termini-e-condizioni/" class="text-blue-600 hover:text-blue-800 underline font-medium">Termini e condizioni</a>
+                  </div>
+                  <div>
+                    e l'<a href="https://t3systems.it/privacy-policy/" class="text-blue-600 hover:text-blue-800 underline font-medium">Informativa sulla privacy</a>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Messaggio di avviso mobile -->
+              <div id="privacy-warning-mobile" class="hidden text-red-400 text-sm pl-8" style="font-family: 'Open Sans', sans-serif;">
+                ⚠️ Devi accettare i termini e condizioni per inviare il modulo
+              </div>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <button 
+            type="submit" 
+            class="w-full px-8 py-4 mt-6 text-white text-md font-semibold rounded-full transition-colors"
+            style="font-family: 'Open Sans', sans-serif; background-color: #0065BF;" 
+            onmouseover="this.style.backgroundColor='#004a8f'" 
+            onmouseout="this.style.backgroundColor='#0065BF'"
+          >
+            Richiedi preventivo gratuito
+          </button>
+
+        </form>
+
+        <!-- JavaScript per sincronizzare i checkbox privacy e gestire avvisi -->
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            const checkboxes = document.querySelectorAll('input[name="privacy"]');
+            const mobileCheckbox = document.getElementById('privacy-mobile');
+            const mobileWarning = document.getElementById('privacy-warning-mobile');
+            const form = document.querySelector('form');
+            
+            // Sincronizza i checkbox quando uno viene cliccato
+            checkboxes.forEach(function(checkbox) {
+              checkbox.addEventListener('change', function() {
+                checkboxes.forEach(function(otherCheckbox) {
+                  if (otherCheckbox !== checkbox) {
+                    otherCheckbox.checked = checkbox.checked;
+                  }
+                });
+                
+                // Nascondi l'avviso quando la checkbox viene spuntata
+                if (mobileWarning && checkbox.checked) {
+                  mobileWarning.classList.add('hidden');
+                }
+              });
+            });
+            
+            // Gestisci il submit del form per mostrare avviso su mobile
+            if (form) {
+              form.addEventListener('submit', function(e) {
+                // Controlla se siamo su mobile (checkbox mobile visibile)
+                if (mobileCheckbox && !mobileCheckbox.offsetParent) {
+                  return; // Desktop, lascia gestire la validazione normale
+                }
+                
+                // Su mobile, controlla se la checkbox è spuntata
+                if (mobileCheckbox && !mobileCheckbox.checked) {
+                  e.preventDefault(); // Impedisce l'invio
+                  
+                  // Mostra l'avviso
+                  if (mobileWarning) {
+                    mobileWarning.classList.remove('hidden');
+                    
+                    // Scroll verso la checkbox per renderla visibile
+                    mobileCheckbox.scrollIntoView({ 
+                      behavior: 'smooth', 
+                      block: 'center' 
+                    });
+                  }
+                }
+              });
+            }
+          });
+        </script>
+
+      </div>
+      
+    </div>
+
+    <!-- Partners -->
+    <div class="flex lg:flex-row-reverse gap-16 lg:px-32 lg:py-16 md:py-16 py-12 flex-col">
+
+      <!-- Left content - Image (Desktop) -->
+      <div class="flex flex-col lg:w-1/2 self-center w-full lg:h-auto lg:order-1 order-2 justify-center items-center" style="min-height: 300px;">
+        <img src="images/imgPartner.png" alt="T3" class="w-full lg:w-[60%] h-auto object-cover lg:rounded-2xl" style="max-height: 50vh;">
+      </div>
+
+      <!-- Right content - Text (Desktop) -->
+      <div class="flex flex-col gap-12 lg:gap-16 lg:w-1/2 self-center w-full md:px-16 md:pt-16 lg:px-0 lg:pt-0 lg:order-2 order-1 px-6 py-12">
+
+        <div class="flex flex-col gap-6 md:gap-8">
+          <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold" style="font-family: 'Nunito', sans-serif;">Sei un professionista?</h2>
+          <p class="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed font-bold" style="font-family: 'Open Sans', sans-serif;">
+            Unisciti al nostro network di partner T3 Expert e offri ai tuoi clienti la tecnologia più avanzata del settore
+          </p>
+        </div>
+        
+        <!-- Cards content -->
+        <div class="flex flex-col gap-8">
+
+          <!-- Card 1 -->
+          <div class="flex flex-row gap-6 md:gap-8 items-center">
+            <div class="inline-flex justify-center items-center flex-shrink-0 md:w-12 md:h-12 md:min-w-12 md:min-h-12" style="background-color: #0065BF; border-radius: 50%; width: 36px; height: 36px; min-width: 36px; min-height: 36px;">
+              <img src="images/vector2.png" alt="T3 Systems" class="w-5 h-5 md:w-6 md:h-6">
+            </div>
+            <div class="flex flex-col gap-2 md:gap-4">
+              <p class="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed" style="font-family: 'Open Sans', sans-serif;">
+                Margini più alti con prodotti innovativi
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="flex flex-row gap-6 md:gap-8 items-center">
+            <div class="inline-flex justify-center items-center flex-shrink-0 md:w-12 md:h-12 md:min-w-12 md:min-h-12" style="background-color: #0065BF; border-radius: 50%; width: 36px; height: 36px; min-width: 36px; min-height: 36px;">
+              <img src="images/vector2.png" alt="T3 Systems" class="w-5 h-5 md:w-6 md:h-6">
+            </div>
+            <div class="flex flex-col gap-2 md:gap-4">
+              <p class="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed" style="font-family: 'Open Sans', sans-serif;">
+                Formazione tecnica e commerciale inclusa
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="flex flex-row gap-6 md:gap-8 items-center">
+            <div class="inline-flex justify-center items-center flex-shrink-0 md:w-12 md:h-12 md:min-w-12 md:min-h-12" style="background-color: #0065BF; border-radius: 50%; width: 36px; height: 36px; min-width: 36px; min-height: 36px;">
+              <img src="images/vector2.png" alt="T3 Systems" class="w-5 h-5 md:w-6 md:h-6">
+            </div>
+            <div class="flex flex-col gap-2 md:gap-4">
+              <p class="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed" style="font-family: 'Open Sans', sans-serif;">
+                Supporto marketing e materiale promozionale
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="flex flex-row gap-6 md:gap-8 items-center">
+            <div class="inline-flex justify-center items-center flex-shrink-0 md:w-12 md:h-12 md:min-w-12 md:min-h-12" style="background-color: #0065BF; border-radius: 50%; width: 36px; height: 36px; min-width: 36px; min-height: 36px;">
+              <img src="images/vector2.png" alt="T3 Systems" class="w-5 h-5 md:w-6 md:h-6">
+            </div>
+            <div class="flex flex-col gap-2 md:gap-4">
+              <p class="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed" style="font-family: 'Open Sans', sans-serif;">
+                Preventivatore online in tempo reale
+              </p>
+            </div>
+          </div>
+          
+        </div>
+
+        <a href="mailto:commerciale@t3systems.it" class="px-8 py-3 text-md font-semibold rounded-full transition-colors w-fit mx-auto lg:mx-0 md:mx-0 inline-block text-center" style="font-family: 'Open Sans', sans-serif; border: 2px solid #0065BF; color: #0065BF; background-color: transparent; text-decoration: none;" onmouseover="this.style.backgroundColor='rgba(0, 101, 191, 0.1)'" onmouseout="this.style.backgroundColor='transparent'">
+          Diventa partner
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="flex flex-col gap-12 lg:gap-16 lg:px-32 lg:py-16 md:p-16 py-12 px-6" style="background-color: #ffffff;">
+
+      <!-- Header -->
+      <div class="flex flex-col gap-6 md:gap-8 items-center">
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-center" style="font-family: 'Nunito', sans-serif;">Domande frequenti</h2>
+        <p class="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed text-center" style="font-family: 'Open Sans', sans-serif;">
+          Tutte le risposte complete ai dubbi più ricorrenti sulle nostre soluzioni.
+        </p>
+      </div>
+
+      <!-- FAQ Container -->
+      <div class="max-w-4xl mx-auto w-full">
+        <div class="flex flex-col gap-4">
+          
+          <!-- FAQ Item 1 -->
+          <div class="faq-item bg-white rounded-lg shadow-sm border border-gray-200">
+            <button class="faq-question w-full px-4 py-4 md:px-6 md:py-5 text-left flex justify-between items-center hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
+              <span class="text-base md:text-lg font-semibold text-gray-800 pr-4" style="font-family: 'Nunito', sans-serif;">È davvero così facile da montare?</span>
+              <i class="fas fa-chevron-down text-gray-500 transition-transform duration-300 faq-arrow"></i>
+            </button>
+            <div class="faq-answer px-4 pb-4 md:px-6 md:pb-5 text-gray-700 leading-relaxed pt-3 md:pt-4 text-sm md:text-base" style="font-family: 'Open Sans', sans-serif; display: none;">
+              Certo! Grazie al sistema Twist-Lock basta ruotare i giunti per assemblare i moduli. Ricevi video tutorial e assistenza per imparare in pochi minuti.
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="faq-item bg-white rounded-lg shadow-sm border border-gray-200">
+            <button class="faq-question w-full px-4 py-4 md:px-6 md:py-5 text-left flex justify-between items-center hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
+              <span class="text-base md:text-lg font-semibold text-gray-800 pr-4" style="font-family: 'Nunito', sans-serif;">Cosa succede se devo ingrandire o modificare lo stand?</span>
+              <i class="fas fa-chevron-down text-gray-500 transition-transform duration-300 faq-arrow"></i>
+            </button>
+            <div class="faq-answer px-4 pb-4 md:px-6 md:pb-5 text-gray-700 leading-relaxed pt-3 md:pt-4 text-sm md:text-base" style="font-family: 'Open Sans', sans-serif; display: none;">
+              Il sistema modulare T3 è completamente flessibile. Puoi aggiungere nuovi moduli, modificare la configurazione o ridimensionare lo stand in qualsiasi momento. Ogni pezzo è compatibile con tutti gli altri componenti del sistema.
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="faq-item bg-white rounded-lg shadow-sm border border-gray-200">
+            <button class="faq-question w-full px-4 py-4 md:px-6 md:py-5 text-left flex justify-between items-center hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
+              <span class="text-base md:text-lg font-semibold text-gray-800 pr-4" style="font-family: 'Nunito', sans-serif;">Posso personalizzare le grafiche?</span>
+              <i class="fas fa-chevron-down text-gray-500 transition-transform duration-300 faq-arrow"></i>
+            </button>
+            <div class="faq-answer px-4 pb-4 md:px-6 md:pb-5 text-gray-700 leading-relaxed pt-3 md:pt-4 text-sm md:text-base" style="font-family: 'Open Sans', sans-serif; display: none;">
+              Assolutamente sì! I nostri pannelli sono progettati per ospitare grafiche personalizzate. Puoi cambiare le grafiche per ogni evento mantenendo la stessa struttura, ottimizzando così i costi e l'impatto ambientale.
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="faq-item bg-white rounded-lg shadow-sm border border-gray-200">
+            <button class="faq-question w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
+              <span class="text-lg font-semibold text-gray-800 pr-4" style="font-family: 'Nunito', sans-serif;">Qual è il costo e in quanto tempo si ripaga?</span>
+              <i class="fas fa-chevron-down text-gray-500 transition-transform duration-300 faq-arrow"></i>
+            </button>
+            <div class="faq-answer px-6 pb-5 text-gray-700 leading-relaxed pt-4" style="font-family: 'Open Sans', sans-serif; display: none;">
+              Il costo varia in base alle dimensioni e configurazione desiderata. Grazie alla riutilizzabilità del sistema, l'investimento si ripaga generalmente già dal secondo o terzo evento, garantendo un ROI significativo nel lungo termine.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function toggleFAQ(button) {
+        const faqItem = button.closest('.faq-item');
+        const answer = faqItem.querySelector('.faq-answer');
+        const arrow = button.querySelector('.faq-arrow');
+        const isOpen = answer.style.display === 'block';
+        
+        // Close all other FAQ items
+        document.querySelectorAll('.faq-item').forEach(item => {
+          const otherAnswer = item.querySelector('.faq-answer');
+          const otherArrow = item.querySelector('.faq-arrow');
+          if (item !== faqItem) {
+            otherAnswer.style.display = 'none';
+            otherArrow.style.transform = 'rotate(0deg)';
+          }
+        });
+        
+        // Toggle current FAQ item
+        if (isOpen) {
+          answer.style.display = 'none';
+          arrow.style.transform = 'rotate(0deg)';
+        } else {
+          answer.style.display = 'block';
+          arrow.style.transform = 'rotate(180deg)';
+        }
+      }
+
+      // Auto-play video when it becomes visible
+      document.addEventListener('DOMContentLoaded', function() {
+        const video = document.getElementById('hero-video');
+        
+        if (video) {
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                // Video is visible, try to play it
+                video.play().catch(error => {
+                  console.log('Autoplay prevented:', error);
+                });
+              } else {
+                // Video is not visible, pause it
+                video.pause();
+              }
+            });
+          }, {
+            threshold: 0.5 // Trigger when 50% of the video is visible
+          });
+          
+          observer.observe(video);
+        }
+      });
+
+      // Carosello manuale - versione corretta
+      let currentSlide = 0;
+      const totalSlides = 3;
+      
+      function updateCarousel() {
+        const track = document.getElementById('carouselTrack');
+        if (track) {
+          // Ogni slide è 33.333% del track, quindi spostiamo di 33.333% per ogni slide
+          const translateX = -currentSlide * 33.333333;
+          track.style.transform = `translateX(${translateX}%)`;
+        }
+      }
+      
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel();
+      }
+      
+      function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+      }
+
+    </script>
+
+    <!-- Footer -->
+    <div class="flex lg:flex-row gap-16 lg:px-32 lg:py-16 flex-col md:p-16 gap-4 py-16 px-8" style="background-color: #0065BF;">
+
+      <div class="flex flex-col gap-8 lg:w-[60%] w-full items-center">
+        <img src="images/logoBianco.png" alt="T3" class="w-40 h-auto">
+        <div class="flex lg:flex-row flex-col gap-4 justify-center">
+          <p class="text-white text-xs font-normal text-center" style="font-family: 'Open Sans', sans-serif;">WOW SRLS | © 2025 Tutti i diritti riservati. Vietata la riproduzione anche parziale.</p>
+          <a href="https://t3systems.it/privacy-policy" class="text-white text-xs font-normal text-center" style="font-family: 'Open Sans', sans-serif;">Privacy Policy</a>
+          <a href="https://t3systems.it/termini-e-condizioni/" class="text-white text-xs font-normal text-center" style="font-family: 'Open Sans', sans-serif;">Termini e condizioni</a>
+          <a href="https://t3systems.it/elenco-dei-cookie/" class="text-white text-xs font-normal text-center" style="font-family: 'Open Sans', sans-serif;">Cookie Policy</a>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-2 lg:w-[40%] w-full items-center">
+        <p class="text-white text-md font-normal lg:text-right text-center" style="font-family: 'Open Sans', sans-serif;">
+          WOW SRLS<br>
+          Via Alessio Valerio, 51<br>
+          35028 Piove di Sacco (PD)<br>
+          P.IVA 05163420283
+        </p>
+      </div>
+    </div>
+    
+  </main>
+</body>
+</html>
