@@ -1,0 +1,13 @@
+{
+  "name": "t3-tailwind",
+  "version": "1.0.0",
+  "description": "T3 Project with Tailwind CSS",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./styles.css --minify",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./styles.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}
+
